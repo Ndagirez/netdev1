@@ -3,6 +3,7 @@ using System;
 using System.Net.WebSockets;
 using System.Numerics;
 
+
 Console.WriteLine("FUN WITH BASIC DATA TYPES");
 LocalVarDeclarations();
 DefaultDeclaration();
@@ -211,3 +212,6 @@ static void BinaryLiterals()
     Console.WriteLine("Thirty Two: {0}", 0b_0010_0000);
     Console.WriteLine("Sixty Four: {0}", 0b_0100_0000);
 }
+
+
+

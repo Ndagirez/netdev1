@@ -1,18 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Net.Security;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Numerics;
 BasicStringFunctionality();
-StringConcatination();
-EscapeChars();
-StringInterpolation();
-StringInterpolationWithDefaultInterpolatedStringHandler();
-StringEquality();
 
+StringConcatination();
+
+EscapeChars();
+
+StringInterpolation();
+
+StringInterpolationWithDefaultInterpolatedStringHandler();
+//StringEquality();
 StringsAreImmutabe();
+
 StringsAreImmutable2();
+
+FunWithStringBuilder();
+
+ProcessBytes();
+Console.ReadLine();
+
+
+
+
+
 static void BasicStringFunctionality()
 {
     Console.WriteLine("this is the basic string functionality data : ");
@@ -20,8 +36,8 @@ static void BasicStringFunctionality()
     Console.WriteLine("the name is : {0}", Firstname);
     Console.WriteLine("firstname has : {0} characters", Firstname.Length);
     Console.WriteLine("the firstname : {0} to upper laters", Firstname.ToUpper());
-    Console.WriteLine("the first name: {0} to lower latters",Firstname.ToLower());
-    Console.WriteLine("the name contains letter y? : {0} ",Firstname.Contains("y"));
+    Console.WriteLine("the first name: {0} to lower latters", Firstname.ToLower());
+    Console.WriteLine("the name contains letter y? : {0} ", Firstname.Contains("y"));
     Console.WriteLine("new firstname : {0} ", Firstname.Replace("ri","45"));
     Console.WriteLine();
 
@@ -35,8 +51,6 @@ static void StringConcatination()
     string s3 = s1 + s2;
     Console.WriteLine(s3);
     Console.WriteLine();
-
-
 }
 static void EscapeChars()
 {
@@ -97,7 +111,7 @@ static void StringInterpolationWithDefaultInterpolatedStringHandler()
                                             long with {interp}";
     Console.WriteLine(mylongString);
 }
-static void StringEqualitySpecifyingCompareRules()
+/*static void StringEqualitySpecifyingCompareRules()
 {
     Console.WriteLine("=> String equality:");
     string s1 = "Hello!";
@@ -112,8 +126,10 @@ static void StringEqualitySpecifyingCompareRules()
     Console.WriteLine("s1 == hello!: {0}", s1 == "hello!");
     Console.WriteLine("s1.Equals(s2): {0}", s1.Equals(s2));
     Console.WriteLine("Yo!.Equals(s2): {0}", "Yo!".Equals(s2));
-    Console.WriteLine();
-}
+    Console.WriteLine(); 
+} 
+*/
+
 /*static void StringEquality()
 {
     Console.WriteLine("=> String equality (Case Insensitive:");
@@ -158,3 +174,77 @@ static void StringsAreImmutable2()
     s2 = "new string Value";
     Console.WriteLine(s2);
 }
+static void FunWithStringBuilder()
+{
+    Console.WriteLine("=>fun with string builder");
+    StringBuilder sb = new StringBuilder("**fantastic games**",256);
+    sb.Append("\n");
+    sb.AppendLine("Half life");
+    sb.AppendLine("Marrowind");
+    sb.AppendLine("Deus EX" + "2");
+    Console.WriteLine(sb.ToString());
+    sb.Replace("2", "invisible war");
+    Console.WriteLine(sb.ToString());
+    Console.WriteLine("sb has :{0} char",sb.Length);
+    Console.WriteLine();
+
+
+}
+
+Console.WriteLine("***fun WQith conversions****");
+//add two short numbers and print the results
+Console.WriteLine("***** Fun with type conversions *****");
+// Add two shorts and print the result.
+short numb1 = 30000, numb2 = 30000;
+short answer = (short)Add(numb1, numb2);
+Console.WriteLine("{0} + {1} = {2}", numb1, numb2, answer);
+NarrowingAttempt();
+Console.ReadLine();
+static int Add(int x, int y)
+{
+    return x + y;
+}
+// Another compiler error!
+static void NarrowingAttempt()
+{
+    byte myByte = 0;
+    int myInt = 200;
+    myByte = (byte)myInt;
+    Console.WriteLine("Value of myByte: {0}", myByte);
+}
+//using static keyword
+/*byte b1 = 100;
+byte b2 = 250;
+byte sum = (byte)Add(b1, b2);
+
+// sum should hold the value 350. However, we find the value 94!
+Console.WriteLine("sum = {0}", sum);*/
+
+//modifying to remove overflow
+static void ProcessBytes()
+{
+    byte b1 = 100;
+    byte b2 = 250;
+    // This time, tell the compiler to add CIL code
+    // to throw an exception if overflow/underflow
+    // takes place.
+    try
+    {
+        byte sum = checked((byte)Add(b1, b2));
+        Console.WriteLine("sum is:{0}", sum);
+    }
+    catch (OverflowException ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+    unchecked
+    {
+        byte sum = (byte)(b1 + b2);
+        Console.WriteLine("sum = {0} ", sum);
+    }
+
+
+}
+// Assuming /checked is enabled,
+// this block will not trigger
+// a runtime exception.

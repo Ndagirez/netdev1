@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicDataType", "BasicDataT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunWithStrings", "FunWithStrings\FunWithStrings.csproj", "{DE283B13-182B-45AA-9086-D0AECD866E11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplicitlyTypedLocalVars", "ImplicitlyTypedLocalVars\ImplicitlyTypedLocalVars.csproj", "{C60000D2-3740-49AC-9043-04BA816D8295}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IterationsAndDecisions", "IterationsAndDecisions\IterationsAndDecisions.csproj", "{A96200CA-473B-41EB-9377-609543AE503D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{DE283B13-182B-45AA-9086-D0AECD866E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE283B13-182B-45AA-9086-D0AECD866E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE283B13-182B-45AA-9086-D0AECD866E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60000D2-3740-49AC-9043-04BA816D8295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60000D2-3740-49AC-9043-04BA816D8295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60000D2-3740-49AC-9043-04BA816D8295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60000D2-3740-49AC-9043-04BA816D8295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A96200CA-473B-41EB-9377-609543AE503D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A96200CA-473B-41EB-9377-609543AE503D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A96200CA-473B-41EB-9377-609543AE503D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A96200CA-473B-41EB-9377-609543AE503D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
